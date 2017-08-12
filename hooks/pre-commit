@@ -1,0 +1,11 @@
+#!/bin/sh
+
+ESLINT='./node_modules/.bin/eslint'
+
+CHANGED_JAVASCRIPT_FILES=`git diff --cached --diff-filter=ACMRTUXB --name-only | grep '\.js$'`
+
+if [[ $CHANGED_JAVASCRIPT_FILES ]] && which $ESLINT && ! $ESLINT $CHANGED_JAVASCRIPT_FILES; then
+  echo "\n[■_■] ESLint is not happy. Please clean things up before committing (or use \"git commit --no-verify...\" to skip).\n" && exit 1
+fi
+
+exit 0

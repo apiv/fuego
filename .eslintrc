@@ -1,0 +1,48 @@
+{
+  "parser"  : "babel-eslint",
+  "extends" : [
+    "standard",
+    "standard-react"
+  ],
+  "env"     : {
+    "browser" : true
+  },
+  "globals" : {
+    "Action"       : false,
+    "__DEV__"      : false,
+    "__PROD__"     : false,
+    "__DEBUG__"    : false,
+    "__COVERAGE__" : false,
+    "__BASENAME__" : false,
+    "React"        : true,
+    "ReactDOM"     : true,
+    "$"            : true,
+    "it"           : true,
+    "expect"       : true,
+    "should"       : true,
+    "describe"     : true,
+    "beforeEach"   : true,
+    "afterEach"    : true,
+    "before"       : true,
+    "after"        : true,
+    "sinon"        : true,
+    "context"      : true
+  },
+  "plugins": [
+    "mocha"
+  ],
+  "rules": {
+    "mocha/no-exclusive-tests": "error",
+    "react/no-unused-prop-types": 0,
+    "semi" : [2, "never"],
+    "max-len": [2, 120, 2],
+    "no-duplicate-imports": 0,
+    "generator-star-spacing": 0,
+    "react/jsx-boolean-value": 0,
+    "require-jsdoc": 2,
+    "valid-jsdoc": [2, {
+      "requireParamDescription": false,
+      "requireReturnDescription": false
+    }]
+  }
+}

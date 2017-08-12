@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    "transform-runtime",
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "lodash",
+    ["lodash", { "id": "semantic-ui-react" }]
+  ],
+  "presets": ["es2015", "stage-0", "react"]
+}
