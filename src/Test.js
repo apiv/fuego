@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import childrenPropType from './childrenPropType'
 
+import Perf from 'react-addons-perf'
+
 const styles = {}
 
-class TestContainer extends Component {
+class Test extends Component {
   static propTypes = {
     /** this is a controlled component */
     active: PropTypes.bool,
@@ -73,4 +75,4 @@ class TestContainer extends Component {
   }
 }
 
-export default TestContainer
+export default Test

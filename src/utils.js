@@ -1,3 +1,5 @@
+import React from 'react'
+
 /**
  * @param {constructor} Component - the component to render.
  * @param {number}      length    - the number of instances to render.
