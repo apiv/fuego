@@ -31,7 +31,7 @@ class App extends Component {
               <GroupPresenterExample />
             </Example>
           </div>
-          <div className='section'>
+          <div className='section highlight'>
             <ReactMarkdown source={require('./md/Results.md')}/>
           </div>
           <div className='section'>

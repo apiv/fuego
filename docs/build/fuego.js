@@ -16398,7 +16398,7 @@ var App = function (_Component) {
           ),
           _react2.default.createElement(
             'div',
-            { className: 'section' },
+            { className: 'section highlight' },
             _react2.default.createElement(_reactMarkdown2.default, { source: __webpack_require__(256) })
           ),
           _react2.default.createElement(
