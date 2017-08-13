@@ -1,7 +1,7 @@
 {
   "name": "fuego",
   "version": "0.0.1",
-  "description": "A React component render time benchmarking tool",
+  "description": "A React component render benchmarking tool",
   "main": "lib/index.js",
   "scripts": {
     "hook": "mkdir -p ./.git/hooks && ln -s ./hooks/pre-commit ./.git/hooks/pre-commit",
@@ -9,7 +9,7 @@
     "test": "./node_modules/.bin/babel-node ./node_modules/.bin/karma start ./config/karma.spec.conf.js",
     "test:coverage": "rimraf coverage && istanbul cover _mocha -- --opts mocha.opts **/*.spec.js",
     "coverage:report": "cat ./coverage/lcov.info | coveralls",
-    "build:clean": "rimraf dist lib",
+    "build:clean": "rimraf docs/build lib",
     "build:lib": "babel src --ignore *.spec.js,*.benchmark.js --out-dir lib",
     "build:packed": "webpack --config webpack.config.babel.js . && rimraf dist/main*",
     "build:all": "yarn build:clean && yarn build:lib && yarn build:packed"
@@ -60,6 +60,7 @@
   "dependencies": {
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
-    "react-addons-perf": "^15.4.2"
+    "react-addons-perf": "^15.4.2",
+    "react-dom": "^15.6.1"
   }
 }

@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 import path from 'path'
 
-const entryPoint = path.resolve(__dirname, 'src/index.js')
+const entryPoint = path.resolve(__dirname, 'docs/app/index.js')
 
 const webpackConfig = {
   entry: {
@@ -10,7 +10,7 @@ const webpackConfig = {
   },
   devtool: 'source-map',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs/build'),
     filename: '[name].js',
     library: ['Fuego']
   },
