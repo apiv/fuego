@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { compareRender } from '../utils'
+import { compareRender } from './utils'
 
-import TestResults from '../Test/TestResults'
+import TestResults from './TestResults'
 
 class ResultRow extends Component {
   static propTypes = {

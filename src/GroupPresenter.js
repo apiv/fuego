@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import childrenPropType from './childrenPropType'
 
 import Group from './Group'
-import GroupResults from './Group/GroupResults'
+import GroupResults from './GroupResults'
 
 const initialState = {
   active: false,
