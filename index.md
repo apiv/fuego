@@ -2,7 +2,7 @@
 
 `Fuego` is a benchmarking tool for React, with a specific focus on component render time benchmarking. `Fuego` is still in it's early, prototype stage, and right now consists of only a few components. However, these components can be used in many ways, described in the subsections below.
 
-<img src="https://d26dzxoao6i3hh.cloudfront.net/items/0L3Q3Z1o1w0m3V0w2S2V/Screen%20Recording%202017-08-13%20at%2003.34%20AM.gif?v=b1164563" />
+<img src="https://d26dzxoao6i3hh.cloudfront.net/items/0J1I1N2F1I2e422s0431/Screen%20Recording%202017-08-13%20at%2003.37%20AM.gif?v=9f01c87e" />
 
 ### Standalone
 
