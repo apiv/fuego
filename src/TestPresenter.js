@@ -31,7 +31,7 @@ class GroupPresenter extends Component {
     this.setState({ results: initialState.results })
   }
 
-  handleBenchmarkStop = (props, { results }) => {
+  handleBenchmarkStop = (props, { inclusive: results }) => {
     this.setState({ results })
   }
 

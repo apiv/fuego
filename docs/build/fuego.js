@@ -16326,7 +16326,7 @@ var _GroupPresenterExample = __webpack_require__(214);
 
 var _GroupPresenterExample2 = _interopRequireDefault(_GroupPresenterExample);
 
-var _GroupPresenterExample3 = __webpack_require__(250);
+var _GroupPresenterExample3 = __webpack_require__(251);
 
 var _GroupPresenterExample4 = _interopRequireDefault(_GroupPresenterExample3);
 
@@ -16334,21 +16334,21 @@ var _TestPresenterExample = __webpack_require__(215);
 
 var _TestPresenterExample2 = _interopRequireDefault(_TestPresenterExample);
 
-var _TestPresenterExample3 = __webpack_require__(252);
+var _TestPresenterExample3 = __webpack_require__(253);
 
 var _TestPresenterExample4 = _interopRequireDefault(_TestPresenterExample3);
 
-var _TestExample = __webpack_require__(251);
+var _TestExample = __webpack_require__(252);
 
 var _TestExample2 = _interopRequireDefault(_TestExample);
 
-var _index = __webpack_require__(260);
+var _README = __webpack_require__(250);
 
-var _index2 = _interopRequireDefault(_index);
+var _README2 = _interopRequireDefault(_README);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var welcome = _index2.default.split('\n###')[0];
+var welcome = _README2.default.split('\n###')[0];
 
 var App = function (_Component) {
   (0, _inherits3.default)(App, _Component);
@@ -16399,48 +16399,48 @@ var App = function (_Component) {
           _react2.default.createElement(
             'div',
             { className: 'section highlight' },
+            _react2.default.createElement(_reactMarkdown2.default, { source: __webpack_require__(257) })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'section' },
             _react2.default.createElement(_reactMarkdown2.default, { source: __webpack_require__(256) })
           ),
           _react2.default.createElement(
             'div',
             { className: 'section' },
-            _react2.default.createElement(_reactMarkdown2.default, { source: __webpack_require__(255) })
+            _react2.default.createElement(_reactMarkdown2.default, { source: __webpack_require__(259) }),
+            _react2.default.createElement(
+              _Example2.default,
+              { title: 'TestPresenter example', code: _TestPresenterExample4.default },
+              _react2.default.createElement(_TestPresenterExample2.default, null)
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'section' },
+            _react2.default.createElement(_reactMarkdown2.default, { source: __webpack_require__(255) }),
+            _react2.default.createElement(
+              _Example2.default,
+              { title: 'TestPresenter example', code: _TestPresenterExample4.default },
+              _react2.default.createElement(_TestPresenterExample2.default, null)
+            )
           ),
           _react2.default.createElement(
             'div',
             { className: 'section' },
             _react2.default.createElement(_reactMarkdown2.default, { source: __webpack_require__(258) }),
-            _react2.default.createElement(
-              _Example2.default,
-              { title: 'TestPresenter example', code: _TestPresenterExample4.default },
-              _react2.default.createElement(_TestPresenterExample2.default, null)
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'section' },
-            _react2.default.createElement(_reactMarkdown2.default, { source: __webpack_require__(254) }),
-            _react2.default.createElement(
-              _Example2.default,
-              { title: 'TestPresenter example', code: _TestPresenterExample4.default },
-              _react2.default.createElement(_TestPresenterExample2.default, null)
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'section' },
-            _react2.default.createElement(_reactMarkdown2.default, { source: __webpack_require__(257) }),
             _react2.default.createElement(_Example2.default, { title: 'Test example with Mocha', code: _TestExample2.default })
           ),
           _react2.default.createElement(
             'div',
             { className: 'section' },
-            _react2.default.createElement(_reactMarkdown2.default, { source: __webpack_require__(253) })
+            _react2.default.createElement(_reactMarkdown2.default, { source: __webpack_require__(254) })
           ),
           _react2.default.createElement(
             'div',
             { className: 'section' },
-            _react2.default.createElement(_reactMarkdown2.default, { source: __webpack_require__(259) })
+            _react2.default.createElement(_reactMarkdown2.default, { source: __webpack_require__(260) })
           )
         )
       );
@@ -17176,7 +17176,7 @@ var GroupPresenter = (_temp2 = _class = function (_Component) {
     }, _this.handleBenchmarkStart = function (props) {
       _this.setState({ results: initialState.results });
     }, _this.handleBenchmarkStop = function (props, _ref2) {
-      var results = _ref2.results;
+      var results = _ref2.inclusive;
 
       _this.setState({ results: results });
     }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
@@ -22014,67 +22014,67 @@ module.exports = pascalcase;
 /* 250 */
 /***/ (function(module, exports) {
 
-module.exports = "import React from 'react'\nimport Fuego, { GroupPresenter, Test } from '../../../../src/index'\n\nconst MyComponent = ({ someSlowProp = 0 }) => {\n  (new Array(someSlowProp * 100)).fill('').map(() => 'this will slow things down lol')\n\n  return <div>Hello el world</div>\n}\n\nconst GroupPresenterExample = () => {\n  return (\n    <GroupPresenter title='Try it out!'>\n      <Test title='A'>\n        {Fuego.renderList(MyComponent, 100, {someSlowProp: 0})}\n      </Test>\n      <Test title='B'>\n        {Fuego.renderList(MyComponent, 100, {someSlowProp: 3})}\n      </Test>\n      <Test title='C'>\n        {Fuego.renderList(MyComponent, 100, {someSlowProp: 1})}\n      </Test>\n    </GroupPresenter>\n  )\n}\n\nexport default GroupPresenterExample\n"
+module.exports = "# Fuego\n\n`Fuego` is a benchmarking tool for React, with a specific focus on component render time benchmarking. `Fuego` is still in it's early, prototype stage, and right now consists of only a few components. However, these components can be used in many ways, described in the subsections below.\n\n```\nnpm install react-fuego=git+ssh://git@github.com:apiv/fuego.git\n```\n\n### More info\n\nFull documentation on the homepage: http://fuego.solutions\n"
 
 /***/ }),
 /* 251 */
 /***/ (function(module, exports) {
 
-module.exports = "import { mount } from 'enzyme'\nimport Fuego, { Test } from 'react-fuego'\nimport MyComponent from './MyComponent'\n\ndescribe('MyComponent', () => {\n  it('renders within a reasonable time', (done) => {\n    const onBenchmarkStop = (results) => {\n      // fail if the total render time is more than 100ms\n      expect(results[0].inclusiveRenderDuration).to.be.at.most(100)\n      done()\n    }\n\n    mount(\n      <Test onBenchmarkStop={onBenchmarkStop}>\n        {Fuego.renderList(MyComponent, 100)}\n      </Test>\n    )\n  })\n})\n"
+module.exports = "import React from 'react'\nimport Fuego, { GroupPresenter, Test } from '../../../../src/index'\n\nconst MyComponent = ({ someSlowProp = 0 }) => {\n  (new Array(someSlowProp * 100)).fill('').map(() => 'this will slow things down lol')\n\n  return <div>Hello el world</div>\n}\n\nconst GroupPresenterExample = () => {\n  return (\n    <GroupPresenter title='Try it out!'>\n      <Test title='A'>\n        {Fuego.renderList(MyComponent, 100, {someSlowProp: 0})}\n      </Test>\n      <Test title='B'>\n        {Fuego.renderList(MyComponent, 100, {someSlowProp: 3})}\n      </Test>\n      <Test title='C'>\n        {Fuego.renderList(MyComponent, 100, {someSlowProp: 1})}\n      </Test>\n    </GroupPresenter>\n  )\n}\n\nexport default GroupPresenterExample\n"
 
 /***/ }),
 /* 252 */
 /***/ (function(module, exports) {
 
-module.exports = "import React from 'react'\nimport Fuego, { TestPresenter } from '../../../../src/index'\n\nconst MyComponent = ({ someSlowProp = 0 }) => {\n  (new Array(someSlowProp * 100)).fill('').map(() => 'this will slow things down lol')\n\n  return <div>Hello el world</div>\n}\n\nconst TestPresenterExample = () => {\n  return (\n    <TestPresenter title='Test of things'>\n      {Fuego.renderList(MyComponent, 100, {})}\n    </TestPresenter>\n  )\n}\n\nexport default TestPresenterExample\n"
+module.exports = "import { mount } from 'enzyme'\nimport Fuego, { Test } from 'react-fuego'\nimport MyComponent from './MyComponent'\n\ndescribe('MyComponent', () => {\n  it('renders within a reasonable time', (done) => {\n    const onBenchmarkStop = (results) => {\n      // fail if the total render time is more than 100ms\n      expect(results[0].inclusiveRenderDuration).to.be.at.most(100)\n      done()\n    }\n\n    mount(\n      <Test onBenchmarkStop={onBenchmarkStop}>\n        {Fuego.renderList(MyComponent, 100)}\n      </Test>\n    )\n  })\n})\n"
 
 /***/ }),
 /* 253 */
 /***/ (function(module, exports) {
 
-module.exports = "# Group\n\nThis is a logic-only component, providing callbacks for when the children finish rendering. This should be used when\nintegrating with testing frameworks, or when creating your own presenter. We would recommend using individual `Test`s\ninstead of `Group` with testing environments, as the callback signature for `Group` is not too ideal at the moment.\n\nGroup runs a set of `Test`s sequentially, until all have been run. Afterwards, it fires `onBenchmarkStop` with the\ncollected results for all child runs.\n\n<table class='ui table'>\n  <thead>\n    <tr>\n    <th>Prop</th>\n    <th>Type</th>\n    <th>Required?</th>\n    <th>Default</th>\n    <th>Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td><code>active</code></td>\n      <td><code>boolean</code></td>\n      <td>YES</td>\n      <td>none</td>\n      <td>If true, the benchmark will begin running.</td>\n    </tr>\n    <tr>\n      <td><code>onBenchmarkStart</code></td>\n      <td><code>func</code></td>\n      <td>NO</td>\n      <td>none</td>\n      <td>\n      invoked when the children start rendering.\n      Signature: <code>(Object props)</code>, where <code>props</code> is all of this <code>Test</code> component's props.\n      </td>\n    </tr>\n    <tr>\n      <td><code>onBenchmarkStop</code></td>\n      <td><code>func</code></td>\n      <td>NO</td>\n      <td>none</td>\n      <td>\n      invoked when the children complete rendering.\n      Signature: <code>(Object props, Object results)</code>, where <code>results</code> is a <code>GroupTestResultsObject</code> (documented above).\n      </td>\n    </tr>\n    <tr>\n      <td><code>children</code></td>\n      <td><code>node</code></td>\n      <td>YES</td>\n      <td>none</td>\n      <td>any children <i>MUST</i> be instances of <code>Test</code>.</td>\n    </tr>\n  </tbody>\n</table>\n"
+module.exports = "import React from 'react'\nimport Fuego, { TestPresenter } from '../../../../src/index'\n\nconst MyComponent = ({ someSlowProp = 0 }) => {\n  (new Array(someSlowProp * 100)).fill('').map(() => 'this will slow things down lol')\n\n  return <div>Hello el world</div>\n}\n\nconst TestPresenterExample = () => {\n  return (\n    <TestPresenter title='Test of things'>\n      {Fuego.renderList(MyComponent, 100, {})}\n    </TestPresenter>\n  )\n}\n\nexport default TestPresenterExample\n"
 
 /***/ }),
 /* 254 */
 /***/ (function(module, exports) {
 
-module.exports = "# GroupPresenter\n\nA fully functional benchmark group, with a user interface.\n\n<table class='ui table'>\n  <thead>\n    <tr>\n    <th>Prop</th>\n    <th>Type</th>\n    <th>Required?</th>\n    <th>Default</th>\n    <th>Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td><code>title</code></td>\n      <td><code>string</code></td>\n      <td>YES</td>\n      <td>none</td>\n      <td>The title of this suite, displayed to the left of the 'Run' button.</td>\n    </tr>\n    <tr>\n      <td><code>children</code></td>\n      <td><code>node</code></td>\n      <td>YES</td>\n      <td>none</td>\n      <td>any children <i>MUST</i> be instances of <code>Test</code>.</td>\n    </tr>\n  </tbody>\n</table>\n"
+module.exports = "# Group\n\nThis is a logic-only component, providing callbacks for when the children finish rendering. This should be used when\nintegrating with testing frameworks, or when creating your own presenter. We would recommend using individual `Test`s\ninstead of `Group` with testing environments, as the callback signature for `Group` is not too ideal at the moment.\n\nGroup runs a set of `Test`s sequentially, until all have been run. Afterwards, it fires `onBenchmarkStop` with the\ncollected results for all child runs.\n\n<table class='ui table'>\n  <thead>\n    <tr>\n    <th>Prop</th>\n    <th>Type</th>\n    <th>Required?</th>\n    <th>Default</th>\n    <th>Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td><code>active</code></td>\n      <td><code>boolean</code></td>\n      <td>YES</td>\n      <td>none</td>\n      <td>If true, the benchmark will begin running.</td>\n    </tr>\n    <tr>\n      <td><code>onBenchmarkStart</code></td>\n      <td><code>func</code></td>\n      <td>NO</td>\n      <td>none</td>\n      <td>\n      invoked when the children start rendering.\n      Signature: <code>(Object props)</code>, where <code>props</code> is all of this <code>Test</code> component's props.\n      </td>\n    </tr>\n    <tr>\n      <td><code>onBenchmarkStop</code></td>\n      <td><code>func</code></td>\n      <td>NO</td>\n      <td>none</td>\n      <td>\n      invoked when the children complete rendering.\n      Signature: <code>(Object props, Object results)</code>, where <code>results</code> is a <code>GroupTestResultsObject</code> (documented above).\n      </td>\n    </tr>\n    <tr>\n      <td><code>children</code></td>\n      <td><code>node</code></td>\n      <td>YES</td>\n      <td>none</td>\n      <td>any children <i>MUST</i> be instances of <code>Test</code>.</td>\n    </tr>\n  </tbody>\n</table>\n"
 
 /***/ }),
 /* 255 */
 /***/ (function(module, exports) {
 
-module.exports = "# Overview\n\n`Fuego` is a very new tool. If you have questions, comments, or issues, please open up an issue here on github.\n\nOverall though, `Fuego` is pretty dope.\n"
+module.exports = "# GroupPresenter\n\nA fully functional benchmark group, with a user interface.\n\n<table class='ui table'>\n  <thead>\n    <tr>\n    <th>Prop</th>\n    <th>Type</th>\n    <th>Required?</th>\n    <th>Default</th>\n    <th>Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td><code>title</code></td>\n      <td><code>string</code></td>\n      <td>YES</td>\n      <td>none</td>\n      <td>The title of this suite, displayed to the left of the 'Run' button.</td>\n    </tr>\n    <tr>\n      <td><code>children</code></td>\n      <td><code>node</code></td>\n      <td>YES</td>\n      <td>none</td>\n      <td>any children <i>MUST</i> be instances of <code>Test</code>.</td>\n    </tr>\n  </tbody>\n</table>\n"
 
 /***/ }),
 /* 256 */
 /***/ (function(module, exports) {
 
-module.exports = "# Results Format\n\n## `TestResultObject`\n\n```\n{\n  results: [\n    {\n      key: '', // the path to this component in the DOM tree\n      inclusiveRenderDuration: 0, // the time it took for all instances to render\n      instanceCount: 0 // the number of instances of this element that were rendered\n    },\n    ...\n  ]\n}\n```\n\n## `GroupResultObject`\n\n```\n{\n  results: [\n    <TestResultObject>,\n    ...\n  ]\n}\n```\n"
+module.exports = "# Overview\n\n`Fuego` is a very new tool. If you have questions, comments, or issues, please open up an issue here on github.\n\nOverall though, `Fuego` is pretty dope.\n"
 
 /***/ }),
 /* 257 */
 /***/ (function(module, exports) {
 
-module.exports = "# Test\n\nThis is a logic-only component, providing callbacks for when the children finish rendering. This should be used when\nintegrating with testing frameworks, or when creating your own presenter. The example code below shows usage with\nmocha.\n\n<table class='ui table'>\n  <thead>\n    <tr>\n    <th>Prop</th>\n    <th>Type</th>\n    <th>Required?</th>\n    <th>Default</th>\n    <th>Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td><code>active</code></td>\n      <td><code>boolean</code></td>\n      <td>YES</td>\n      <td>none</td>\n      <td>If true, the benchmark will begin running.</td>\n    </tr>\n    <tr>\n      <td><code>onBenchmarkStart</code></td>\n      <td><code>func</code></td>\n      <td>NO</td>\n      <td>none</td>\n      <td>\n      invoked when the children start rendering.\n      Signature: <code>(Object props)</code>, where <code>props</code> is all of this <code>Test</code> component's props.\n      </td>\n    </tr>\n    <tr>\n      <td><code>onBenchmarkStop</code></td>\n      <td><code>func</code></td>\n      <td>NO</td>\n      <td>none</td>\n      <td>\n      invoked when the children complete rendering.\n      Signature: <code>(Object props, Object results)</code>, where <code>results</code> is a <code>TestResultsObject</code> (documented above).\n      </td>\n    </tr>\n    <tr>\n      <td><code>children</code></td>\n      <td><code>node</code></td>\n      <td>YES</td>\n      <td>none</td>\n      <td>the components to benchmark.</td>\n    </tr>\n  </tbody>\n</table>\n"
+module.exports = "# Results Format\n\n## `TestResultObject`\n\n```\n{\n  results: [\n    {\n      key: '', // the path to this component in the DOM tree\n      inclusiveRenderDuration: 0, // the time it took for all instances to render\n      instanceCount: 0 // the number of instances of this element that were rendered\n    },\n    ...\n  ]\n}\n```\n\n## `GroupResultObject`\n\n```\n{\n  results: [\n    <TestResultObject>,\n    ...\n  ]\n}\n```\n"
 
 /***/ }),
 /* 258 */
 /***/ (function(module, exports) {
 
-module.exports = "# TestPresenter\n\nA fully functional standalone benchmark test, with a user interface.\n\n<table class='ui table'>\n  <thead>\n    <tr>\n    <th>Prop</th>\n    <th>Type</th>\n    <th>Required?</th>\n    <th>Default</th>\n    <th>Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td><code>title</code></td>\n      <td><code>string</code></td>\n      <td>YES</td>\n      <td>none</td>\n      <td>The title of this suite, displayed to the left of the 'Run' button.</td>\n    </tr>\n    <tr>\n      <td><code>children</code></td>\n      <td><code>node</code></td>\n      <td>YES</td>\n      <td>none</td>\n      <td>children will be rendered (with render times recorded) when the 'Run' button is clicked.</td>\n    </tr>\n  </tbody>\n</table>\n"
+module.exports = "# Test\n\nThis is a logic-only component, providing callbacks for when the children finish rendering. This should be used when\nintegrating with testing frameworks, or when creating your own presenter. The example code below shows usage with\nmocha.\n\n<table class='ui table'>\n  <thead>\n    <tr>\n    <th>Prop</th>\n    <th>Type</th>\n    <th>Required?</th>\n    <th>Default</th>\n    <th>Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td><code>active</code></td>\n      <td><code>boolean</code></td>\n      <td>YES</td>\n      <td>none</td>\n      <td>If true, the benchmark will begin running.</td>\n    </tr>\n    <tr>\n      <td><code>onBenchmarkStart</code></td>\n      <td><code>func</code></td>\n      <td>NO</td>\n      <td>none</td>\n      <td>\n      invoked when the children start rendering.\n      Signature: <code>(Object props)</code>, where <code>props</code> is all of this <code>Test</code> component's props.\n      </td>\n    </tr>\n    <tr>\n      <td><code>onBenchmarkStop</code></td>\n      <td><code>func</code></td>\n      <td>NO</td>\n      <td>none</td>\n      <td>\n      invoked when the children complete rendering.\n      Signature: <code>(Object props, Object results)</code>, where <code>results</code> is a <code>TestResultsObject</code> (documented above).\n      </td>\n    </tr>\n    <tr>\n      <td><code>children</code></td>\n      <td><code>node</code></td>\n      <td>YES</td>\n      <td>none</td>\n      <td>the components to benchmark.</td>\n    </tr>\n  </tbody>\n</table>\n"
 
 /***/ }),
 /* 259 */
 /***/ (function(module, exports) {
 
-module.exports = "# Utils\n\n## `Fuego.renderList`\n\nRenders a list of the given elements, the given number of times, with the given props.\n\n\n<table class='ui table'>\n  <thead>\n    <tr>\n    <th>Argument</th>\n    <th>Type</th>\n    <th>Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td><code>Component</code></td>\n      <td><code>constructor</code></td>\n      <td>The component to render.</td>\n    </tr>\n    <tr>\n      <td><code>count</code></td>\n      <td><code>number</code></td>\n      <td>the number of instances to render.</td>\n    </tr>\n    <tr>\n      <td><code>props</code></td>\n      <td><code>object || func<object></code></td>\n      <td>\n      Either an object or function which returns an object. These are the props that will be applied to each instance.\n      Signature if type is function: <code>(Number index)</code>, where <code>index</code> is the current index in the iterator.\n      </td>\n    </tr>\n  </tbody>\n</table>\n"
+module.exports = "# TestPresenter\n\nA fully functional standalone benchmark test, with a user interface.\n\n<table class='ui table'>\n  <thead>\n    <tr>\n    <th>Prop</th>\n    <th>Type</th>\n    <th>Required?</th>\n    <th>Default</th>\n    <th>Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td><code>title</code></td>\n      <td><code>string</code></td>\n      <td>YES</td>\n      <td>none</td>\n      <td>The title of this suite, displayed to the left of the 'Run' button.</td>\n    </tr>\n    <tr>\n      <td><code>children</code></td>\n      <td><code>node</code></td>\n      <td>YES</td>\n      <td>none</td>\n      <td>children will be rendered (with render times recorded) when the 'Run' button is clicked.</td>\n    </tr>\n  </tbody>\n</table>\n"
 
 /***/ }),
 /* 260 */
 /***/ (function(module, exports) {
 
-module.exports = "# Fuego\n\n`Fuego` is a benchmarking tool for React, with a specific focus on component render time benchmarking. `Fuego` is still in it's early, prototype stage, and right now consists of only a few components. However, these components can be used in many ways, described in the subsections below.\n\n```\nnpm install react-fuego=git+ssh://git@github.com:apiv/fuego.git\n```\n\n### More info\n\nFull documentation on the homepage: http://fuego.solutions\n"
+module.exports = "# Utils\n\n## `Fuego.renderList`\n\nRenders a list of the given elements, the given number of times, with the given props.\n\n\n<table class='ui table'>\n  <thead>\n    <tr>\n    <th>Argument</th>\n    <th>Type</th>\n    <th>Description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td><code>Component</code></td>\n      <td><code>constructor</code></td>\n      <td>The component to render.</td>\n    </tr>\n    <tr>\n      <td><code>count</code></td>\n      <td><code>number</code></td>\n      <td>the number of instances to render.</td>\n    </tr>\n    <tr>\n      <td><code>props</code></td>\n      <td><code>object || func<object></code></td>\n      <td>\n      Either an object or function which returns an object. These are the props that will be applied to each instance.\n      Signature if type is function: <code>(Number index)</code>, where <code>index</code> is the current index in the iterator.\n      </td>\n    </tr>\n  </tbody>\n</table>\n"
 
 /***/ }),
 /* 261 */

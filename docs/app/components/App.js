@@ -11,7 +11,7 @@ import testPresenterExampleText from '!raw-loader!./examples/TestPresenterExampl
 
 import testExampleText from '!raw-loader!./examples/TestExample'
 
-import index from '../../../index.md'
+import index from '../../../README.md'
 
 const welcome = index.split('\n###')[0]
 
