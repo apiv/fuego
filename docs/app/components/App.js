@@ -19,7 +19,9 @@ class App extends Component {
         </div>
         <div className='main-content'>
           <ReactMarkdown source={welcome} />
+          <br />
           <Example />
+          <br />
           <ReactMarkdown source={rest} />
         </div>
       </div>

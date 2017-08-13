@@ -7,14 +7,18 @@ import React from 'react'
  * @returns {Array<node>}
  */
 function renderList (Component, length, props) {
-  return new Array(length).fill(true).map((t, index) => {
+  return new Array(length).fill('').map((t, index) => {
     let passedProps = typeof(props) === 'function'
       ? props(index)
       : props || {}
 
+    // clone the object so that multiple instances are not sharing the same
+    // ref to the props object (causes `key` error).
+    passedProps = { ...passedProps }
+
     // let's avoid the annoying `key` prop warning
     if (typeof(passedProps.key) === 'undefined') {
-      passedProps.key = `Test-${index}`
+      passedProps.key = `Test-${index}-${btoa(Math.random())}`
     }
 
     return <Component {...(passedProps || {})} />

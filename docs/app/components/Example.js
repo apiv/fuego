@@ -11,7 +11,7 @@ const Example = () => {
   return (
     <GroupPresenter title='Try it out!'>
       <Test title='A'>
-        {Fuego.renderList(MyComponent, 100)}
+        {Fuego.renderList(MyComponent, 100, {someSlowProp: 0})}
       </Test>
       <Test title='B'>
         {Fuego.renderList(MyComponent, 100, {someSlowProp: 3})}
