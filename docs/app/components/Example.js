@@ -1,26 +1,50 @@
-import React from 'react'
-import Fuego, { GroupPresenter, Test } from '../../../src/index'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import childrenPropType from '../../../src/childrenPropType'
 
-const MyComponent = ({ someSlowProp = 0 }) => {
-  (new Array(someSlowProp * 100)).fill('').map(() => 'this will slow things down lol')
+import ReactMarkdown from 'react-markdown'
 
-  return <div>Hello el world</div>
-}
+class Example extends Component {
+  static propTypes = {
+    code: PropTypes.string,
+    title: PropTypes.string,
+    children: childrenPropType
+  }
 
-const Example = () => {
-  return (
-    <GroupPresenter title='Try it out!'>
-      <Test title='A'>
-        {Fuego.renderList(MyComponent, 100, {someSlowProp: 0})}
-      </Test>
-      <Test title='B'>
-        {Fuego.renderList(MyComponent, 100, {someSlowProp: 3})}
-      </Test>
-      <Test title='C'>
-        {Fuego.renderList(MyComponent, 100, {someSlowProp: 1})}
-      </Test>
-    </GroupPresenter>
-  )
+  state = {
+    showSource: false
+  }
+
+  toggle = () => {
+    this.setState({
+      showSource: !this.state.showSource
+    })
+  }
+
+  render () {
+    const { children, title } = this.props
+    const { showSource } = this.state
+
+    const code = this.props.code
+      .replace('../../../../src/index', 'react-fuego')
+
+    return (
+      <div className='ui segments example'>
+        <div className='ui segment'>
+          <h2 className='ui header'>{title}</h2>
+          <button className='ui icon button flat' onClick={this.toggle}>
+            {showSource === true ? 'Hide' : 'Show'} source <i className='icon code' />
+          </button>
+        </div>
+        {
+          showSource
+            ? <div className='ui segment highlight'><ReactMarkdown source={'```jsx\n' + code + '```'} /></div>
+            : null
+        }
+        {children}
+      </div>
+    )
+  }
 }
 
 export default Example
