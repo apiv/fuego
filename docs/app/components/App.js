@@ -19,9 +19,11 @@ class App extends Component {
         </div>
         <div className='main-content'>
           <ReactMarkdown source={welcome} />
-          <br />
+        </div>
+        <div className='ui container'>
           <Example />
-          <br />
+        </div>
+        <div className='main-content'>
           <ReactMarkdown source={rest} />
         </div>
       </div>

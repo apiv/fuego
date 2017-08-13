@@ -25,6 +25,24 @@ function renderList (Component, length, props) {
   })
 }
 
+/**
+ * Orders the list of results by their render time
+ * @param {object} a
+ * @param {object} b
+ */
+function compareRender(a, b) {
+  const aTime = a.results[1].inclusiveRenderDuration
+  const bTime = b.results[1].inclusiveRenderDuration
+  if (aTime > bTime) {
+    return 1
+  } else if (aTime < bTime) {
+    return -1
+  } else if (aTime === bTime) {
+    return 0
+  }
+}
+
 export {
-  renderList
+  renderList,
+  compareRender
 }
