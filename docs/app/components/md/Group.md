@@ -1,8 +1,8 @@
 # Group
 
 This is a logic-only component, providing callbacks for when the children finish rendering. This should be used when
-integrating with testing frameworks, or when creating your own presenter. The example code below shows usage with
-mocha.
+integrating with testing frameworks, or when creating your own presenter. We would recommend using individual `Test`s
+instead of `Group` with testing environments, as the callback signature for `Group` is not too ideal at the moment.
 
 Group runs a set of `Test`s sequentially, until all have been run. Afterwards, it fires `onBenchmarkStop` with the
 collected results for all child runs.
@@ -42,7 +42,7 @@ collected results for all child runs.
       <td>none</td>
       <td>
       invoked when the children complete rendering.
-      Signature: <code>(Object props, Object results)</code>, where <code>results</code> is a <code>TestResultsObject</code> (documented above).
+      Signature: <code>(Object props, Object results)</code>, where <code>results</code> is a <code>GroupTestResultsObject</code> (documented above).
       </td>
     </tr>
     <tr>
