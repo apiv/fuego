@@ -22044,7 +22044,7 @@ module.exports = "# GroupPresenter\n\nA fully functional benchmark group, with a
 /* 255 */
 /***/ (function(module, exports) {
 
-module.exports = "# Overview\n\n`Fuego` is a very new tool. If ou have questions, comments, or issues, please open up an issue here on github.\n\nOverall though, `Fuego` is pretty dope.\n"
+module.exports = "# Overview\n\n`Fuego` is a very new tool. If you have questions, comments, or issues, please open up an issue here on github.\n\nOverall though, `Fuego` is pretty dope.\n"
 
 /***/ }),
 /* 256 */
