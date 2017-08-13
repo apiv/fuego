@@ -17,11 +17,11 @@ const Suite = () => (
 ### Standalone, comparing multiple
 
 ```jsx
-import Fuego, { Test, Group } from 'fuego'
+import Fuego, { Test, GroupPresenter } from 'fuego'
 
 const Suite = () => {
   return (
-    <Group title='A vs B'>
+    <GroupPresenter title='A vs B'>
       <Test title='Test 1'>
         {Fuego.renderList(MyComponent, 100, { test: 'a' })}
       </Test>
@@ -58,10 +58,23 @@ describe('MyComponent', () => {
 
 ## Components
 
+*Important* to note, that `Test` and `Group` have no visual output. They do not render any DOM, but simply fire
+callbacks that you pass to them when the tests are running / complete. If you would like a UI, use the `TestPresenter`
+or `GroupPresenter` components.
+
 ### `Fuego.Test`
+
+### `Fuego.TestPresenter`
 
 ### `Fuego.Group`
 
+*Important* _ONLY_ `Test` components can be children of a `Group`. `TestPresenter` is for standalone, single Test display
+only.
+
+### `Fuego.GroupPresenter`
+
+*Important* _ONLY_ `Test` components can be children of a `GroupPresenter`. `TestPresenter` is for standalone, single Test display
+only.
 
 ## Helpers
 
