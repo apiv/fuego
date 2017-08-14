@@ -55,6 +55,7 @@
     "karma-webpack-with-fast-source-maps": "^1.9.2",
     "mocha": "^3.2.0",
     "raw-loader": "^0.5.1",
+    "react-markdown": "^2.5.0",
     "rimraf": "^2.6.1",
     "webpack": "^2.3.3"
   },
@@ -62,7 +63,6 @@
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-addons-perf": "^15.4.2",
-    "react-dom": "^15.6.1",
-    "react-markdown": "^2.5.0"
+    "react-dom": "^15.6.1"
   }
 }
