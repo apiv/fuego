@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import childrenPropType from '../../../src/childrenPropType'
 
-import ReactMarkdown from 'react-markdown'
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { monokaiSublime } from 'react-syntax-highlighter/dist/styles'
 
 class Example extends Component {
   static propTypes = {
@@ -38,7 +39,12 @@ class Example extends Component {
         </div>
         {
           showSource
-            ? <div className='ui segment highlight'><ReactMarkdown source={'```jsx\n' + code + '```'} /></div>
+            ?
+            (
+              <div className='ui segment highlight'>
+                <SyntaxHighlighter language='javascript' style={monokaiSublime}>{code}</SyntaxHighlighter>
+              </div>
+            )
             : null
         }
         {children}

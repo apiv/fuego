@@ -5,7 +5,7 @@ const entryPoint = path.resolve(__dirname, 'docs/app/index.js')
 
 const webpackConfig = {
   entry: {
-    'fuego': entryPoint,
+    'bundle': entryPoint,
     'fuego.min': entryPoint
   },
   devtool: 'source-map',
