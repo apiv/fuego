@@ -11,7 +11,7 @@
     "coverage:report": "cat ./coverage/lcov.info | coveralls",
     "build:clean": "rimraf docs/build lib",
     "build:lib": "babel src --ignore *.spec.js,*.benchmark.js --out-dir lib",
-    "build:packed": "webpack --config webpack.config.babel.js . && rimraf dist/main*",
+    "build:packed": "yarn check && webpack --config webpack.config.babel.js . && rimraf dist/main*",
     "build:all": "yarn build:clean && yarn build:lib && yarn build:packed"
   },
   "repository": {
