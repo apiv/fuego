@@ -7926,6 +7926,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass2 = __webpack_require__(15);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
 var _getPrototypeOf = __webpack_require__(13);
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -7933,10 +7937,6 @@ var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 var _classCallCheck2 = __webpack_require__(14);
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(15);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
 
 var _possibleConstructorReturn2 = __webpack_require__(17);
 
@@ -7970,13 +7970,66 @@ function _interopRequireDefault(obj) {
 
 var styles = {};
 
-var Test = (_temp2 = _class = function (_Component) {
-  (0, _inherits3.default)(Test, _Component);
+// These are stub components, used only as carriers for
+// the `children` prop.
+
+var Render = function (_Component) {
+  (0, _inherits3.default)(Render, _Component);
+
+  function Render() {
+    (0, _classCallCheck3.default)(this, Render);
+    return (0, _possibleConstructorReturn3.default)(this, (Render.__proto__ || (0, _getPrototypeOf2.default)(Render)).apply(this, arguments));
+  }
+
+  return Render;
+}(_react.Component);
+
+var Update = function (_Component2) {
+  (0, _inherits3.default)(Update, _Component2);
+
+  function Update() {
+    (0, _classCallCheck3.default)(this, Update);
+    return (0, _possibleConstructorReturn3.default)(this, (Update.__proto__ || (0, _getPrototypeOf2.default)(Update)).apply(this, arguments));
+  }
+
+  return Update;
+}(_react.Component);
+
+/**
+ * @example testing initial render performance
+ * <Test title='lol'>
+ *   {Fuego.renderList(MyComponent, 100, { someProp: 'hello' })}
+ * </Test>
+ *
+ * @example testing initial render performance
+ * Note: when only testing initial render, Test.Render is optional.
+ *       this example functions exactly the same as the previous example.
+ * <Test title='lol'>
+ *   <Test.Render>
+ *     {Fuego.renderList(MyComponent, 100, { someProp: 'hello' })}
+ *   </Test.Render>
+ * </Test>
+ *
+ * @example testing update performance
+ * Note: when testing update performance, Test.Render and Test.Update
+ *       are required.
+ * <Test title='lol'>
+ *   <Test.Render>
+ *     {Fuego.renderList(MyComponent, 100, { someProp: 'hello' })}
+ *   </Test.Render>
+ *   <Test.Update>
+ *     {Fuego.renderList(MyComponent, 100, { someProp: 'THIS IS DIFFERENT' })}
+ *   </Test.Update>
+ * </Test>
+ */
+
+var Test = (_temp2 = _class = function (_Component3) {
+  (0, _inherits3.default)(Test, _Component3);
 
   function Test() {
     var _ref;
 
-    var _temp, _this, _ret;
+    var _temp, _this3, _ret;
 
     (0, _classCallCheck3.default)(this, Test);
 
@@ -7984,24 +8037,24 @@ var Test = (_temp2 = _class = function (_Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Test.__proto__ || (0, _getPrototypeOf2.default)(Test)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+    return _ret = (_temp = (_this3 = (0, _possibleConstructorReturn3.default)(this, (_ref = Test.__proto__ || (0, _getPrototypeOf2.default)(Test)).call.apply(_ref, [this].concat(args))), _this3), _this3.state = {
       running: false
-    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
+    }, _temp), (0, _possibleConstructorReturn3.default)(_this3, _ret);
   }
 
   (0, _createClass3.default)(Test, [{
     key: 'start',
     value: function start() {
-      var _this2 = this;
+      var _this4 = this;
 
       setTimeout(function () {
-        var onBenchmarkStart = _this2.props.onBenchmarkStart;
+        var onBenchmarkStart = _this4.props.onBenchmarkStart;
 
         if (onBenchmarkStart) {
-          onBenchmarkStart(_this2.props);
+          onBenchmarkStart(_this4.props);
         }
         _reactAddonsPerf2.default.start();
-        _this2.setState({ running: true });
+        _this4.setState({ running: true });
       });
     }
   }, {
@@ -8041,7 +8094,31 @@ var Test = (_temp2 = _class = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      return this.state.running ? _react2.default.createElement('div', { className: styles.content }, this.props.children) : null;
+      return this.state.running ? _react2.default.createElement('div', { className: styles.content }, this.renderContent) : null;
+    }
+  }, {
+    key: 'renderContent',
+    get: function get() {
+      var children = this.props.children;
+
+      if (children.length > 2) return children;
+      var definedChild = _react.Children.toArray(children).find(function (child) {
+        return child.type === Render;
+      });
+
+      return definedChild ? definedChild.props.children : children;
+    }
+  }, {
+    key: 'updateContent',
+    get: function get() {
+      var children = this.props.children;
+
+      if (children.length !== 2) return null;
+      var definedChild = _react.Children.toArray(children).find(function (child) {
+        return child instanceof Update;
+      });
+
+      return definedChild ? definedChild.props.children : null;
     }
   }]);
   return Test;
@@ -8049,13 +8126,16 @@ var Test = (_temp2 = _class = function (_Component) {
   /** this is a controlled component */
   active: _propTypes2.default.bool,
 
+  /** if true, the content in <Test.Update /> will be used */
+  update: _propTypes2.default.bool,
+
   /** callback */
   onBenchmarkStart: _propTypes2.default.func,
   onBenchmarkStop: _propTypes2.default.func,
 
   /** the tests to render */
   children: _childrenPropType2.default
-}, _temp2);
+}, _class.Render = Render, _class.Update = Update, _temp2);
 exports.default = Test;
 
 /***/ }),
@@ -8720,4 +8800,4 @@ exports.default = Fuego;
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=main.b140705957025f3739c9.js.map
+//# sourceMappingURL=main.21d8bb669ccc6f6315f6.js.map
