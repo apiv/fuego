@@ -16552,8 +16552,8 @@ var App = function (_Component) {
             _react2.default.createElement(_reactMarkdown2.default, { source: __webpack_require__(436) }),
             _react2.default.createElement(
               _Example2.default,
-              { title: 'TestPresenter example', code: _TestPresenterExample4.default },
-              _react2.default.createElement(_TestPresenterExample2.default, null)
+              { title: 'GroupPresenter example', code: _TestPresenterExample4.default },
+              _react2.default.createElement(_GroupPresenterExample2.default, null)
             )
           ),
           _react2.default.createElement(

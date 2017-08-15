@@ -45,8 +45,8 @@ class App extends Component {
           </div>
           <div className='section'>
             <ReactMarkdown source={require('./md/GroupPresenter.md')}/>
-            <Example title='TestPresenter example' code={testPresenterExampleText}>
-              <TestPresenterExample />
+            <Example title='GroupPresenter example' code={testPresenterExampleText}>
+              <GroupPresenterExample />
             </Example>
           </div>
           <div className='section'>
