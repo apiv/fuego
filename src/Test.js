@@ -60,6 +60,7 @@ class Test extends Component {
       this.setState({ running: false })
       if (onBenchmarkStop) {
         onBenchmarkStop(this.props, {
+          title: this.props.title,
           inclusive: Perf.getInclusive(),
           exclusive: Perf.getExclusive(),
           wasted: Perf.getWasted()

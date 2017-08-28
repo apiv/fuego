@@ -72,11 +72,11 @@ class Group extends Component {
    * @param {object} props    - the props of the Test instance.
    * @param {object} results  - the results of the Test's render.
    */
-  handleBenchmarkStop = (props, { inclusive }) => {
+  handleBenchmarkStop = (props, results) => {
     this.setState({
       activeIndex: this.state.activeIndex + 1,
       results: this.state.results.concat([
-        { title: props.title, results: inclusive }
+        results
       ])
     }, () => {
       if (this.state.activeIndex === this.props.children.length) {

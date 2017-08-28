@@ -1,27 +1,33 @@
 # Results Format
 
-## `TestResultObject`
+`Test` outputs the _exact same_ output that you get
+from `Perf`, **plus** the `title` of the test.
+The object that looks like this:
 
 ```
 {
-  results: [
-    {
-      key: '', // the path to this component in the DOM tree
-      inclusiveRenderDuration: 0, // the time it took for all instances to render
-      instanceCount: 0 // the number of instances of this element that were rendered
-    },
-    ...
-  ]
+  title: 'this is my title',
+  inclusive: [...],
+  exclusive: [...],
+  wasted: [...]
 }
 ```
 
-## `GroupResultObject`
+`Group` outputs that same output, just as an array, like this:
 
 ```
-{
-  results: [
-    <TestResultObject>,
-    ...
-  ]
-}
+[
+  {
+    title: 'first test',
+    inclusive: [...],
+    exclusive: [...],
+    wasted: [...]
+  },
+  {
+    title: 'second test',
+    inclusive: [...],
+    exclusive: [...],
+    wasted: [...]
+  }
+]
 ```

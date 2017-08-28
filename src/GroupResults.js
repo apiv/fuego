@@ -14,8 +14,8 @@ class ResultRow extends Component {
     isInspecting: false
   }
 
-  get mainResult () { return this.props.result.results[1] }
-  get title () { return this.props.result.title || this.mainResult.key }
+  get mainResult () { return this.props.results.inclusive[1] }
+  get title () { return this.props.results.title || this.mainResult.key }
 
   get total () { return this.mainResult.inclusiveRenderDuration }
   get instanceCount () { return this.mainResult.instanceCount }
@@ -28,7 +28,7 @@ class ResultRow extends Component {
   }
 
   render () {
-    const { rank, result: { results } } = this.props
+    const { rank, results: { inclusive } } = this.props
     const { isInspecting } = this.state
 
     const color = rank === 0
@@ -44,7 +44,7 @@ class ResultRow extends Component {
         <td>{this.perComponentTime.toFixed(2)}</td>
         <td><button onClick={this.toggle} className='ui icon button tiny'><i className='icon search' /></button></td>
       </tr>
-      {isInspecting ? <tr><td colSpan={5}><TestResults results={results} /></td></tr> : null}
+      {isInspecting ? <tr><td colSpan={5}><TestResults results={inclusive} /></td></tr> : null}
       </tbody>
     )
   }
@@ -63,7 +63,7 @@ class GroupResults extends Component {
   renderResult = (result) => {
     const rank = this.ordered.indexOf(result)
 
-    return <ResultRow result={result} rank={rank} />
+    return <ResultRow results={result} rank={rank} />
   }
 
   render () {

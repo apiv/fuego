@@ -6,7 +6,7 @@ describe('MyComponent', () => {
   it('renders within a reasonable time', (done) => {
     const onBenchmarkStop = (results) => {
       // fail if the total render time is more than 100ms
-      expect(results[0].inclusiveRenderDuration).to.be.at.most(100)
+      expect(results.inclusive[0].inclusiveRenderDuration).to.be.at.most(100)
       done()
     }
 

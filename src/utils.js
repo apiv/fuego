@@ -31,8 +31,8 @@ function renderList (Component, length, props) {
  * @param {object} b
  */
 function compareRender(a, b) {
-  const aTime = a.results[1].inclusiveRenderDuration
-  const bTime = b.results[1].inclusiveRenderDuration
+  const aTime = a.inclusive[1].inclusiveRenderDuration
+  const bTime = b.inclusive[1].inclusiveRenderDuration
   if (aTime > bTime) {
     return 1
   } else if (aTime < bTime) {
