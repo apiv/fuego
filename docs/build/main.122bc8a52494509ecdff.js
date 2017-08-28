@@ -8033,7 +8033,9 @@ var Test = (_temp2 = _class = function (_Component) {
         this.setState({ running: false });
         if (onBenchmarkStop) {
           onBenchmarkStop(this.props, {
-            inclusive: _reactAddonsPerf2.default.getInclusive()
+            inclusive: _reactAddonsPerf2.default.getInclusive(),
+            exclusive: _reactAddonsPerf2.default.getExclusive(),
+            wasted: _reactAddonsPerf2.default.getWasted()
           });
         }
       }
@@ -8704,10 +8706,6 @@ function _interopRequireDefault(obj) {
 }
 
 var Fuego = {
-  Test: _Test2.default,
-  TestPresenter: _TestPresenter2.default,
-  Group: _Group2.default,
-  GroupPresenter: _GroupPresenter2.default,
   renderList: _utils.renderList
 };
 
@@ -8720,4 +8718,4 @@ exports.default = Fuego;
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=main.b140705957025f3739c9.js.map
+//# sourceMappingURL=main.122bc8a52494509ecdff.js.map
