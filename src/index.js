@@ -5,10 +5,6 @@ import GroupPresenter from './GroupPresenter'
 import { renderList } from './utils'
 
 const Fuego = {
-  Test,
-  TestPresenter,
-  Group,
-  GroupPresenter,
   renderList
 }
 
