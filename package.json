@@ -1,5 +1,5 @@
 {
-  "name": "fuego",
+  "name": "react-fuego",
   "version": "0.1.0",
   "description": "A React component render benchmarking tool",
   "main": "lib/index.js",
