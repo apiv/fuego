@@ -42,4 +42,4 @@ limit how slow a component is allowed to render before failing. For examples, sc
 
 ### More info
 
-**Very detailed** documentation and **examples** on the homepage: http://fuego.solutions
+**Very detailed** documentation and **examples** on the homepage: https://apiv.github.io/fuego
