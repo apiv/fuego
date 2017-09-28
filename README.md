@@ -40,6 +40,32 @@ output with a smart reporter.
 3) Simple and powerful test suite integration. With `Fuego`, it's finally possible to avoid component bloat by defining tests which
 limit how slow a component is allowed to render before failing. For examples, scroll to the `Test` section below.
 
-### More info
+### Demos and Documentation
 
 **Very detailed** documentation and **examples** on the homepage: https://apiv.github.io/fuego
+
+### Releasing
+
+On the latest clean `master`:
+
+Build:
+
+```sh
+yarn build:all
+```
+
+Version:
+```sh
+yarn release:major
+yarn release:minor
+yarn release:patch
+```
+
+Publish:
+```sh
+npm publish
+```
+
+### Maintainers
+
+- **@apiv** twitter: @austin_pivarnik
